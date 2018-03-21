@@ -1,7 +1,6 @@
 # MagicButton
-Sensor button (Emulation of work S576B)
 
-This is an emulation of Siemens S576B
+This is a touch button emulating of Siemens S576B
 
 Initially designed to control the brightness of an LED lamp
 
