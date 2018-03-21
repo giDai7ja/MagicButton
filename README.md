@@ -13,4 +13,4 @@ If the light is on - a short press turns off the light, long press adjusts the b
 
 To change the direction of brightness adjustment, you must repeat a long press
 
-Project on OSHPark https://oshpark.com/shared_projects/qMJ6iwDg
+Project on Oshpark:  https://oshpark.com/shared_projects/qMJ6iwDg
