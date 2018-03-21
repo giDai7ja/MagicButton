@@ -1,5 +1,5 @@
 # MagicButton
-Single sensor button (Emulation of work S576B)
+Sensor button (Emulation of work S576B)
 
 This is an emulation of Siemens S576B
 
