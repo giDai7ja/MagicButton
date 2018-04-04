@@ -14,6 +14,6 @@ To change the direction of brightness adjustment, you must repeat a long press
 
 [Project on Oshpark][1]
 
-
+ [![YouTube](https://img.youtube.com/vi/CE1e687H_70/0.jpg)](http://www.youtube.com/watch?v=CE1e687H_70)
 
 [1]: https://oshpark.com/shared_projects/qMJ6iwDg "OSH Park"
