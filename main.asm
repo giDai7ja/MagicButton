@@ -40,10 +40,11 @@
 .equ	PIN_SENSOR = PINB0	; Вход сенсора
 .equ	PIN_PWM = PINB1		; Выход ШИМ
 .equ	PIN_V = PINB2		; Выход на вибру
-.equ	DREBEZG = 3			; Число циклов WDT для устранения помех и дребезга
+.equ	DREBEZG = 2			; Число циклов WDT для устранения помех и дребезга
 .equ	LONG_PRESS = 28		; Число циклов WDT для длинного нажатия
-.equ	STEP_PWM = 134		; Шаг регулировки ШИМ
-.equ	MIN_SPWM = 0x2000	; Минимальное значение яркости
+.equ	STEP_PWM = 15		; Шаг регулировки ШИМ
+.equ	MIN_SPWM = 0x2000	; Минимальное значение яркости (real)
+.equ	MAX_PWM = 0x01FFF	; Максимальное значение ШИМ
 
 .cseg
 
@@ -108,8 +109,10 @@ RESET:
 	ser		PWML
 	ser		SPWML
 	ser		SPWMH
-	out		OCR0AH, SPWMH
-	out		OCR0AL, SPWML
+	ldi		TMP, high(MAX_PWM)
+	out		OCR0AH, TMP
+	ldi		TMP, low(MAX_PWM)
+	out		OCR0AL, TMP
 	ldi		COUNT, 0x00
 	ldi		FLAG, 0x00
 
@@ -268,8 +271,13 @@ FADE_UP:
 	brcc	NEW_PWM
 	ser		SPWMH
 	ser		SPWML
-	ser		PWML
-	ser		PWMH
+
+	ldi		PWMH, high(MAX_PWM)
+	ldi		PWML, low(MAX_PWM)
+
+;	ser		PWML
+;	ser		PWMH
+
 	sbr		FLAG, (1<<BORDER)
 	rjmp	TIM0_OVF_END
 
@@ -287,6 +295,15 @@ NEW_PWM:
 	rcall	mpy16u
 	mov		PWML, m16u2
 	mov		PWMH, m16u3
+
+	ror		PWMH
+	ror		PWML
+	ror		PWMH
+	ror		PWML
+	ror		PWMH
+	ror		PWML
+	cbr		PWMH, 0b11100000
+
 
 TIM0_OVF_END:
 ; Возвращаем SREG
