@@ -1,4 +1,4 @@
-# MagicButton - LED touch control
+# MagicButton - ATtiny4 LED touch control
 
 This is a touch button emulating of Siemens S576B
 
