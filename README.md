@@ -1,4 +1,4 @@
-# MagicButton
+# MagicButton - LED touch control
 
 This is a touch button emulating of Siemens S576B
 
