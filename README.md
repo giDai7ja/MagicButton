@@ -12,7 +12,7 @@ If the light is on - a short press turns off the light, long press adjusts the b
 
 To change the direction of brightness adjustment, you must repeat a long press
 
-[Project on Oshpark][1]
+[View the Project on Oshpark][1]
 
  [![YouTube](https://img.youtube.com/vi/CE1e687H_70/0.jpg)](http://www.youtube.com/watch?v=CE1e687H_70)
 
